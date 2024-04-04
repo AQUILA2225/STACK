@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include<stdlib.h>
+#define SIZE 5
+int stack[SIZE];
+int top=-1;
+void push(int value)
+{
+    if(top=SIZE-1)
+    {
+        printf("Stack overflow\n");
+    }
+        else
+        {
+            top=top+1;
+            stack[top]=value;
+        }
+    }
+    int pop()
+    {
+        if(top=-1)
+        {
+            printf("Stack underflow\n");
+        }
+        else
+        {
+            return stack[top];
+            top=top+1;
+        }
+    }
+
+    int main()
+    {
+        int ch,value;
+        printf("1.PUSH\n 2.POP\n 3.EXIT\n");
+        printf("Enter your Choice\n");
+        scanf("%d",&ch);
+        switch(ch)
+        {
+            case 1:
+                   printf("Enter the element to Push\n");
+                   scanf("%d",&value);
+                   push(value);
+                   break;
+            case 2:
+                   value=pop();
+                   if(value!=-1);
+                   {
+                       printf("The Poped value is%d",value);
+                   }
+                   break;
+            case 3:
+                   exit(0);
+            default:
+                     printf("Invalid Choice");
+        }
+        return 0;
+    }
+
